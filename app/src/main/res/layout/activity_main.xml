@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/rammetto_one"
+        android:text="WEATHER"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="51dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:fontFamily="@font/sen"
+            android:hint="Enter City Name"
+            android:inputType="textPersonName"
+            android:padding="20dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnGet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/borderbutton"
+            android:fontFamily="@font/sen"
+            android:onClick="getWeatherDetails"
+            android:padding="20dp"
+            android:text="Get"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="41dp" />
+
+        <TextView
+            android:id="@+id/cityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sen"
+            android:textAlignment="center"
+            android:textColor="#D0ECB1"
+            android:textSize="25sp"
+            android:textAllCaps="true"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="18dp" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:fontFamily="@font/sen"
+            android:textAlignment="center"
+            android:textColor="#D0ECB1"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="315dp"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="37dp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="312dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tempT"
+                    android:layout_width="188dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/sen"
+                    android:text="Temperature"
+                    android:textColor="#FF9800"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tempV"
+                    android:layout_width="188dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/sen"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/feelLikeT"
+                    android:layout_width="188dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/sen"
+                    android:text="Feel Like"
+                    android:textAlignment="textStart"
+                    android:textColor="#FF9800"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/feelLikeV"
+                    android:layout_width="188dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/sen"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="106dp">
+
+                <TextView
+                    android:id="@+id/humidityT"
+                    android:layout_width="188dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/sen"
+                    android:text="Humidity"
+                    android:textColor="#FF9800"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/humidityV"
+                    android:layout_width="189dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sen"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/windT"
+                    android:layout_width="188dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/sen"
+                    android:text="Wind Speed"
+                    android:textColor="#FF9800"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/windV"
+                    android:layout_width="188dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/sen"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/cloudT"
+                    android:layout_width="188dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/sen"
+                    android:text="Cloudiness"
+                    android:textColor="#FF9800"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/cloudV"
+                    android:layout_width="188dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/sen"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
+
+                <TextView
+                    android:id="@+id/pressureT"
+                    android:layout_width="188dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/sen"
+                    android:text="Pressure"
+                    android:textColor="#FF9800"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/pressureV"
+                    android:layout_width="188dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/sen"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+</LinearLayout>
